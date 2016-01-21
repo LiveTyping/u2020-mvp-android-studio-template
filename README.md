@@ -1,9 +1,18 @@
-# u2020-mvp-android-studio-template
-
 [U+2020-mvp][u2020-mvp] Android Studio Template
 ==================================
 
 TODO
+
+For Mac:
+--------
+Just copy all files to `$ANDROID_STUDIO_FOLDER$/Contents/plugins/android/lib/templates/activities/$CUSTOM_TEMPLATE_FOLDER$`
+
+For Windows:
+--------
+Just copy all files to `$ANDROID_STUDIO_FOLDER$\plugins\android\lib\templates\activities\$CUSTOM_TEMPLATE_FOLDER$`
+
+
+![Debug drawer](images/android-studio-screenshot.jpg)
 
 License
 -------
