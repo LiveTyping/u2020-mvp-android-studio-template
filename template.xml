@@ -2,12 +2,12 @@
 <template
     format="5"
     revision="5"
-    name="Empty Activity"
+    name="MVP Activity"
     minApi="7"
     minBuildApi="14"
-    description="Creates a new empty activity">
+    description="Creates a new u2020-mvp template">
 
-    <category value="Activity" />
+    <category value="U2020" />
     <formfactor value="Mobile" />
 
     <parameter
@@ -20,11 +20,39 @@
         help="The name of the activity class to create" />
 
     <parameter
-        id="generateLayout"
-        name="Generate Layout File"
-        type="boolean"
-        default="true"
-        help="If true, a layout file will be generated" />
+        id="parentComponentClass"
+        name="Main Component Name"
+        type="string"
+        constraints="class|nonempty"
+        default="U2020Component"
+        help="The name of the root application compomponent" />
+
+    <parameter
+        id="scopeClass"
+        name="Scope Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${underscoreToCamelCase(classToResource(activityClass))}Scope"
+        default="MainScope"
+        help="The name of the scope class to create" />
+
+    <parameter
+        id="componentClass"
+        name="Component Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainComponent"
+        suggest="${underscoreToCamelCase(classToResource(activityClass))}Component"
+        help="The name of the Component to create" />
+
+    <parameter
+        id="viewClass"
+        name="View Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainView"
+        suggest="${underscoreToCamelCase(classToResource(activityClass))}View"
+        help="The name of the View to create" />
 
     <parameter
         id="layoutName"
@@ -33,8 +61,24 @@
         constraints="layout|unique|nonempty"
         suggest="${activityToLayout(activityClass)}"
         default="activity_main"
-        visibility="generateLayout"
         help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="generateModule"
+        name="Generate Module"
+        type="boolean"
+        default="true"
+        help="If true, a Module will be generated" />
+
+    <parameter
+        id="moduleClass"
+        name="Module Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainModule"
+        visibility="generateModule"
+        suggest="${underscoreToCamelCase(classToResource(activityClass))}Module"
+        help="The name of the Module to create" />
 
     <parameter
         id="isLauncher"
@@ -50,10 +94,27 @@
         constraints="package"
         default="com.mycompany.myapp" />
 
-    <!-- 128x128 thumbnails relative to template.xml -->
+<!--    <parameter
+        id="generatePresenter"
+        name="Generate Presenter?"
+        type="boolean"
+        default="true"
+        help="If true, a Presenter will be generated" />
+
+    <parameter
+        id="presenterClass"
+        name="Presenter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainPresenter"
+        visibility="generatePresenter"
+        suggest="${underscoreToCamelCase(classToResource(activityClass))}Presenter"
+        help="The name of the Presenter to create" />        
+ -->
+    <!-- 512x512 thumbnails relative to template.xml -->
     <thumbs>
         <!-- default thumbnail is required -->
-        <thumb>template_blank_activity.png</thumb>
+        <thumb>app_icon.png</thumb>
     </thumbs>
 
     <globals file="globals.xml.ftl" />
