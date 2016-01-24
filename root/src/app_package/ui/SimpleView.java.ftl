@@ -2,6 +2,8 @@ package ${packageName};
 
 public class ${viewClass} extends FrameLayout implements BaseView {
 
+    @Inject ${activityClass}.Presenter presenter;
+
     public ${viewClass}(Context context, AttributeSet attrs) {
         super(context, attrs);
         ${componentClass} component = ComponentFinder.findActivityComponent(context);
