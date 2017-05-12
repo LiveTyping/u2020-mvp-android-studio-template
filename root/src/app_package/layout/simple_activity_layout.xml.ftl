@@ -11,5 +11,4 @@
     <#include "../../../../../common/recipe_simple_menu.xml.ftl" />
 </#if>
 
-    <#include "../../../../../common/recipe_simple_dimens.xml" />
 </recipe>

@@ -7,7 +7,7 @@
     minBuildApi="14"
     description="Creates a new u2020-mvp template">
 
-    <category value="U2020" />
+    <category value="U2020MVP" />
     <formfactor value="Mobile" />
 
     <parameter
